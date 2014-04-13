@@ -7,5 +7,7 @@ namespace RPGCC.Models
 {
     public class Account
     {
+        public int AccountID;
+        public string AccountName;
     }
 }

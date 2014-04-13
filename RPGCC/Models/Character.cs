@@ -14,6 +14,12 @@ namespace RPGCC.Models
         public string Description { get; set; }
         public int Spark { get; set; }
         public int DoomActual { get; set; }
+        public List<String> Traits;
+        public List<String> Consequences;
+        public List<String> Gear;
+        public List<String> Perks;
+        public List<Skill> Skills;
+
 
     }
     public enum Gender
