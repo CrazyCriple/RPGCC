@@ -216,3 +216,5 @@ pip-log.txt
 RPGCC/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 *.suo
 *.cache
+*.cache
+*.suo
