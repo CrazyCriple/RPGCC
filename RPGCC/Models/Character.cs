@@ -3,25 +3,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using RPGCC.Models.Assets;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RPGCC.Models
 {
+    [Table("character")]
     public class Character
     {
+        [Key]
+        public int Id { get; set; }
         public string Name { get; set; }
+
+        [Display(Name = "Geschlecht")]
         public Gender Gender { get; set; }
+
+        [Display(Name = "Alter")]
         public int Age { get; set; }
+
+        [Display(Name = "Charakter Konzept")]
         public string Concept { get; set; }
+
+        [Display(Name = "Beschreibung")]
         public string Description { get; set; }
+
         public int Spark { get; set; }
+
         public int DoomActual { get; set; }
+
+        [Display(Name = "Eigenschaften")]
         public List<String> Traits { get; set; }
+
+        [Display(Name = "Konsequenzen")]
         public List<String> Consequences { get; set; }
+
+        [Display(Name = "Ausrüstung")]
         public List<String> Gear { get; set; }
+
+        [Display(Name = "Extras")]
         public List<String> Perks { get; set; }
+
+        [Display(Name = "Fähigkeiten")]
         public List<Skill> Skills { get; set; }
+
         public List<IAsset> Assets { get; set; }
         public List<IDamage> Damages { get; set; }
+
+        [Display(Name = "Ist spielbar")]
+        public bool IsNPC { get; set; }
 
         public Character(string name)
         {
