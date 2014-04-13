@@ -30,6 +30,10 @@ namespace RPGCC.Models
             FillDamage();
             FillSkills();
         }
+        public int GetMaxDoom()
+        {
+            return Assets.Find(x => x.Name == "fortune").Value * 2;
+        }
 
         private void FillAssets()
         {
