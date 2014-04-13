@@ -7,8 +7,8 @@ namespace RPGCC.Models
 {
     public interface IDamage
     {
-            public string Name { get; set; }
-            public int Value { get; set; }
+            string Name { get;}
+            int Value { get; set; }
 
 
 

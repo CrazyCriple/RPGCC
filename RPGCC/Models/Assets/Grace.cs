@@ -7,7 +7,7 @@ namespace RPGCC.Models.Assets
 {
     public class Grace : IAsset
     {
-        public string Name { get; set; }
+        public string Name { get { return "grace"; }}
 
         public int Value { get; set; }
 

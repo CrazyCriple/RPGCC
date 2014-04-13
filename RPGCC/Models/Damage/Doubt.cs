@@ -7,7 +7,7 @@ namespace RPGCC.Models.Assets
 {
     public class Doubt : IDamage
     {
-        public string Name { get; set; }
+        public string Name { get{return "doubt"; }}
 
         public int Value { get; set; }
 

@@ -179,6 +179,7 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assets\Acuity.cs" />
+    <Compile Include="Models\Campaign.cs" />
     <Compile Include="Models\Damage\Fear.cs" />
     <Compile Include="Models\Damage\Doubt.cs" />
     <Compile Include="Models\Damage\Pain.cs" />

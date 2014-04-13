@@ -8,9 +8,9 @@ namespace RPGCC.Models
 {
     public interface IAsset
     {
-        public string Name { get; set; }
+        string Name { get;}
 
-        public int Value { get; set; }
+        int Value { get; set; }
 
 
     }
