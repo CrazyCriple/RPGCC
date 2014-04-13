@@ -178,18 +178,14 @@
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Assets.cs" />
-    <Compile Include="Models\Character.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ISystem.cs" />
-    <Compile Include="Models\Perk.cs" />
-    <Compile Include="Models\Saga.cs" />
     <Compile Include="Models\Asset.cs" />
+    <Compile Include="Models\Campaign.cs" />
     <Compile Include="Models\Character.cs" />
-    <Compile Include="Models\Saga.cs" />
+    <Compile Include="Models\Damage.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ISystem.cs" />
     <Compile Include="Models\Perk.cs" />
+    <Compile Include="Models\Saga.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Saga-DE.Designer.cs">
       <AutoGen>True</AutoGen>
