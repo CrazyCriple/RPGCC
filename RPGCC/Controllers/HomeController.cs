@@ -26,5 +26,7 @@ namespace RPGCC.Controllers
 
             return View();
         }
+
+        
     }
 }
