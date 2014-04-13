@@ -23,6 +23,14 @@ namespace RPGCC.Models
         public List<IAsset> Assets { get; set; }
         public List<IDamage> Damages { get; set; }
 
+        public Character(string name)
+        {
+            Name = name;
+            FillAssets();
+            FillDamage();
+            FillSkills();
+        }
+
         private void FillAssets()
         {
             Assets = new List<IAsset>();
@@ -30,6 +38,7 @@ namespace RPGCC.Models
             Assets.Add(new Force());
             Assets.Add(new Fortune());
             Assets.Add(new Grace());
+           
         }
 
         private void FillDamage()
