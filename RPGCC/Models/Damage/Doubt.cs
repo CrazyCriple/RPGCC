@@ -5,7 +5,7 @@ using System.Web;
 
 namespace RPGCC.Models.Assets
 {
-    public class Doubt : IAsset
+    public class Doubt : IDamage
     {
         public string Name { get; set; }
 
