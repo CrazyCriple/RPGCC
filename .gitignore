@@ -215,3 +215,4 @@ pip-log.txt
 .mr.developer.cfg
 RPGCC/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 *.suo
+*.cache

@@ -184,7 +184,18 @@
     <Compile Include="Models\ISystem.cs" />
     <Compile Include="Models\Perk.cs" />
     <Compile Include="Models\Saga.cs" />
+    <Compile Include="Models\Asset.cs" />
+    <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\Saga.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ISystem.cs" />
+    <Compile Include="Models\Perk.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Saga-DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Saga-DE.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -243,6 +254,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Saga-DE.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Saga-DE.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
