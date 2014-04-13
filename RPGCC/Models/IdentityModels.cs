@@ -13,5 +13,7 @@ namespace RPGCC.Models
             : base("DefaultConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<RPGCC.Models.Character> Characters { get; set; }
     }
 }

@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model RPGCC.Models.Character
+
+<div class="jumbotron">
+    
+    @Html.LabelFor(model => model.Name)
+    <div><%= Html.Encode(model.Name) %></div>
+
+    @Html.LabelFor(model => model.Concept)
+    @Html.Encode(model.Concept)
+
+</div>
