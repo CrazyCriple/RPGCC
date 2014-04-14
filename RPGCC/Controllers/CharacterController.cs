@@ -18,7 +18,7 @@ namespace RPGCC.Controllers
             
         }
 
-        public ActionResult View1()
+        public ActionResult Edit()
         {
             var char1 = CreateTestChar();
             return View(char1);
@@ -33,9 +33,10 @@ namespace RPGCC.Controllers
 
             char1.Age = 28;
             char1.Concept = "Impaler";
-            char1.Assets.Find(x => x.Name == "force").Value = 5;
-            char1.Assets.Find(x => x.Name == "acuity").Value = 3;
-            char1.Assets.Find(x => x.Name == "grace").Value = 1;
+            char1.Assets.Force = 5;
+            char1.Assets.Fortune = 4;
+            char1.Assets.Grace = 1;
+            char1.Assets.Acuity = 3;
 
             char1.Description = "He awesome";
             char1.Gender = Gender.Male;

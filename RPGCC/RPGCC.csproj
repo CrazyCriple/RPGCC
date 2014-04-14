@@ -179,23 +179,15 @@
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Assets\Acuity.cs" />
+    <Compile Include="Models\Assets\SagaAssets.cs" />
     <Compile Include="Models\Campaign.cs" />
-    <Compile Include="Models\Damage\Fear.cs" />
-    <Compile Include="Models\Damage\Doubt.cs" />
-    <Compile Include="Models\Damage\Pain.cs" />
-    <Compile Include="Models\Damage\Kismet.cs" />
-    <Compile Include="Models\Assets\Grace.cs" />
-    <Compile Include="Models\Assets\Fortune.cs" />
-    <Compile Include="Models\Assets\Force.cs" />
-    <Compile Include="Models\Assets\IAsset.cs" />
     <Compile Include="Models\Character.cs" />
-    <Compile Include="Models\Damage\IDamage.cs" />
-    <Compile Include="Models\Enums\AssetName.cs" />
+    <Compile Include="Models\Damage\SagaDamages.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ISystem.cs" />
     <Compile Include="Models\Perk.cs" />
     <Compile Include="Models\Saga.cs" />
+    <Compile Include="Models\Skills\SagaSkills.cs" />
     <Compile Include="Models\Skills\Skill.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Saga-DE.Designer.cs">
@@ -252,7 +244,6 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Character\Index.cshtml" />
-    <Content Include="Views\Character\View1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

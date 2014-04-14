@@ -5,6 +5,8 @@ using System.Web;
 using RPGCC.Models.Assets;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using RPGCC.Models.Damage;
+using RPGCC.Models.Skills;
 
 namespace RPGCC.Models
 {
@@ -15,7 +17,7 @@ namespace RPGCC.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        [Display(Name = "Geschlecht")]
+        [Display(Name = "Geschlecht", Prompt = "Wähle das Geschlecht deines Charakters")]
         public Gender Gender { get; set; }
 
         [Display(Name = "Alter")]
@@ -29,6 +31,7 @@ namespace RPGCC.Models
 
         public int Spark { get; set; }
 
+        [Display(Name = "Momentaner Doom (0 beim start)")]
         public int DoomActual { get; set; }
 
         [Display(Name = "Eigenschaften")]
@@ -43,11 +46,14 @@ namespace RPGCC.Models
         [Display(Name = "Extras")]
         public List<String> Perks { get; set; }
 
-        [Display(Name = "Fähigkeiten")]
-        public List<Skill> Skills { get; set; }
+        [Display(Name = "Fähigkeiten", Description = "Das kann dein Charakter")]
+        public SagaSkills SagaSkills { get; set; }
 
-        public List<IAsset> Assets { get; set; }
-        public List<IDamage> Damages { get; set; }
+        [Display(Name = "Assets")]
+        public SagaAssets Assets { get; set; }
+
+        [Display(Name = "Schaden")]
+        public SagaDamages Damages { get; set; }
 
         [Display(Name = "Ist spielbar")]
         public bool IsNPC { get; set; }
@@ -55,49 +61,19 @@ namespace RPGCC.Models
         public Character(string name)
         {
             Name = name;
-            FillAssets();
-            FillDamage();
-            FillSkills();
+            Assets = new SagaAssets();
+            Damages = new SagaDamages();
+            SagaSkills = new SagaSkills();
+
         }
         public int GetMaxDoom()
         {
-            return Assets.Find(x => x.Name == "fortune").Value * 2;
+            return Assets.Fortune*2;
         }
-
-        private void FillAssets()
-        {
-            Assets = new List<IAsset>();
-            Assets.Add(new Acuity());
-            Assets.Add(new Force());
-            Assets.Add(new Fortune());
-            Assets.Add(new Grace());
-           
-        }
-
-        private void FillDamage()
-        {
-            Damages = new List<IDamage>();
-            Damages.Add(new Doubt());
-            Damages.Add(new Fear());
-            Damages.Add(new Kismet());
-            Damages.Add(new Pain());
-        }
-
-        private void FillSkills()
-        {
-            Skills = new List<Skill>();
-            Skills.Add(new Skill { Name = "Academia" });
-            Skills.Add(new Skill { Name = "Awareness" });
-            Skills.Add(new Skill { Name = "Athletics" });
-            Skills.Add(new Skill { Name = "Influence" });
-            Skills.Add(new Skill { Name = "Legerdemain" });
-            Skills.Add(new Skill { Name = "Subterfuge" });
-            Skills.Add(new Skill { Name = "Marksmanship" });
-            Skills.Add(new Skill { Name = "Weaponry" });
-        }
+        
         private void FillCustomSkill(Skill skill)
         {
-            Skills.Add(skill);
+            SagaSkills.Skills.Add(skill);
         }
 
     }
