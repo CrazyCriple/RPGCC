@@ -24,6 +24,25 @@ namespace RPGCC.Controllers
             return View(char1);
 
         }
+
+
+        public ActionResult Wizard()
+        {
+            var character = new Character("noname");
+
+            //Choose name / age and gender
+
+            //Choose concept
+
+            //Choose Assets
+
+            //Choose Skills
+
+            //Choose Traits
+
+
+        }
+
         /// <summary>
         /// Only for testing
         /// </summary>
