@@ -67,8 +67,32 @@ namespace RPGCC.Controllers
         }
 
 
+<<<<<<< HEAD
         [HttpPost]
         public ActionResult Finishing(string prevBtn, string nextBtn)
+=======
+        public ActionResult Wizard()
+        {
+            var character = new Character("noname");
+
+            //Choose name / age and gender
+
+            //Choose concept
+
+            //Choose Assets
+
+            //Choose Skills
+
+            //Choose Traits
+
+
+        }
+
+        /// <summary>
+        /// Only for testing
+        /// </summary>
+        private Character CreateTestChar()
+>>>>>>> ae145c4c2e9bb6edcedd91e1c4b64ce1a43420b2
         {
             Character obj = GetCharacter();
             if (prevBtn != null)
