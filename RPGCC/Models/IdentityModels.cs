@@ -15,5 +15,9 @@ namespace RPGCC.Models
         }
 
         public System.Data.Entity.DbSet<RPGCC.Models.Character> Characters { get; set; }
+
+        public System.Data.Entity.DbSet<RPGCC.Models.Wizard.BasicDetails> BasicDetails { get; set; }
+
+        public System.Data.Entity.DbSet<RPGCC.Models.Wizard.BasicStats> BasicStats { get; set; }
     }
 }

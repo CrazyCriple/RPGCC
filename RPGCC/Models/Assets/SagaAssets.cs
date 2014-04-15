@@ -8,6 +8,8 @@ namespace RPGCC.Models.Assets
 {
     public class SagaAssets
     {
+
+        [Key]
         [Display(Name = "Schärfe", GroupName = "Assets")]
         public int Acuity { get; set;}
 

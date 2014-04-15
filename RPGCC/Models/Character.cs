@@ -34,7 +34,7 @@ namespace RPGCC.Models
         [Display(Name = "Momentaner Doom (0 beim start)")]
         public int DoomActual { get; set; }
 
-        [Display(Name = "Eigenschaften")]
+        [Display(Name = "Merkmale")]
         public List<String> Traits { get; set; }
 
         [Display(Name = "Konsequenzen")]

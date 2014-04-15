@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/javascript">
+    $(function () {
+        $("#container").Wizard({
+            formId: "wiz",
+            model: @(Html.Raw(Json.Encode(Model))),
+            url: "/@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()/",
+            mapping: {
+                create: function (options)
+                {
+                    var m = ko.mapping.fromJS(options.data);
+                    return m;
+                }
+            }
+        });
+    });
+</script>
+
+<h2>Index</h2>
+
+<form id ="wiz">
+    <div id ="container">
+        <ul>
+            <li><div class="form-group">
+    @Html.LabelFor(model => model.Step1.Name, new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.Step1.Name, new { data_bind = "value: Model.Step1.Name" })
+        @Html.ValidationMessageFor(model => model.Step1.Name)
+    </div>
+</div></li>
+            <li>Step 2</li>
+            <li>Step 3</li>
+
+        </ul>
+        
+
+    </div>
+    
+
+</form>
+
+<input data-bind="event: { click: Previous }" type="submit" value="Previous" />
+<input data-bind="event: { click: Next.bind($data, $element) }" type="submit" value="Next" />
