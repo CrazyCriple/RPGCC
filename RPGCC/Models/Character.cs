@@ -58,13 +58,12 @@ namespace RPGCC.Models
         [Display(Name = "Ist spielbar")]
         public bool IsNPC { get; set; }
 
-        public Character(string name)
+        public Character()
         {
-            Name = name;
             Assets = new SagaAssets();
             Damages = new SagaDamages();
             SagaSkills = new SagaSkills();
-
+            Traits = new List<string>();
         }
         public int GetMaxDoom()
         {

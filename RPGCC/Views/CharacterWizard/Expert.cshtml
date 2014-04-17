@@ -1,0 +1,125 @@
+﻿@model RPGCC.Models.Character
+
+@{
+    ViewBag.Title = "Expert";
+}
+
+
+
+<h2>Expert</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Character</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-1" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gender, new { @class = "control-label col-md-1" })
+            <div class="col-md-10">
+                @{
+                    List<SelectListItem> listItems= new List<SelectListItem>();
+   listItems.Add(new SelectListItem
+        {
+          Text = "Männlich",
+          Value = "Male"
+        });
+   listItems.Add(new SelectListItem
+        {
+            Text = "Weiblich",
+            Value = "Female",
+            Selected = true
+        });
+   listItems.Add(new SelectListItem
+        {
+            Text = "Unbekannt",
+            Value = "Unknown"
+        });
+                }
+                @Html.DropDownListFor(model => model.Gender, listItems, "-- Wähle --")
+                @Html.ValidationMessageFor(model => model.Gender)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Age, new { @class = "control-label col-md-1" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Age)
+                @Html.ValidationMessageFor(model => model.Age)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Concept, new { @class = "control-label col-md-1" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Concept)
+                @Html.ValidationMessageFor(model => model.Concept)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-1" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+        </div>
+        
+        
+        
+        
+        <h3>Primäre Stärke</h3>
+        
+        @{
+            foreach (var asset in Model.Assets.AssetNames)
+            {
+                if (asset != "Glück")
+                {
+                    @Html.RadioButtonFor(m => m.Assets.Primary, asset)
+                    @asset
+            
+                }
+
+            }
+            
+        }
+        
+        
+        <h3>Sekundäre Stärke</h3>
+
+        @{
+    foreach (var asset in Model.Assets.AssetNames)
+    {
+        if (asset != "Glück")
+        {
+            @Html.RadioButtonFor(m => m.Assets.Secondary, asset)
+            @asset
+
+        }
+
+    }
+
+        }
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Weiter" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
