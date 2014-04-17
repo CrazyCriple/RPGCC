@@ -8,8 +8,31 @@ namespace RPGCC.Models.Assets
 {
     public class SagaAssets
     {
-
         [Key]
+        public string Primary { get; set; }
+
+        public string Secondary { get; set; }
+
+        public List<KeyValuePair<string,int>> Assets { get; set; }
+
+        public List<string> AssetNames { get; set; }
+
+
+        public SagaAssets()
+        {
+            AssetNames = new List<string>();
+            AssetNames.Add("Kraft");
+            AssetNames.Add("Schärfe");
+            AssetNames.Add("Raffinesse");
+            AssetNames.Add("Glück");
+
+
+            Assets =new List<KeyValuePair<string, int>>();
+
+            //initialize all assets
+            
+        }
+            
         [Display(Name = "Schärfe", GroupName = "Assets")]
         public int Acuity { get; set;}
 

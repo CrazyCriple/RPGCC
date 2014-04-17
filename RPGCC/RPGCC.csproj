@@ -215,6 +215,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="main.css" />
+    <Content Include="normalize.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -267,6 +269,9 @@
     <Content Include="Views\Character\Success.cshtml" />
     <Content Include="Views\New\Index.cshtml" />
     <Content Include="Views\CharacterWizard\Index.cshtml" />
+    <Content Include="Views\CharacterWizard\Expert.cshtml" />
+    <Content Include="Views\CharacterWizard\Expert2.cshtml" />
+    <Content Include="Views\CharacterWizard\ExpertSave.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

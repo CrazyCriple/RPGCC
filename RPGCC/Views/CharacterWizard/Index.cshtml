@@ -39,7 +39,7 @@
                             @Html.ValidationMessageFor(model => model.Step1.Name)
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         @Html.LabelFor(model => model.Step1.Gender, new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -47,7 +47,7 @@
                             @Html.ValidationMessageFor(model => model.Step1.Gender)
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         @Html.LabelFor(model => model.Step1.Age, new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -55,7 +55,7 @@
                             @Html.ValidationMessageFor(model => model.Step1.Age)
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         @Html.LabelFor(model => model.Step1.Concept, new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -63,7 +63,7 @@
                             @Html.ValidationMessageFor(model => model.Step1.Concept)
                         </div>
                     </div>
-                    
+
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Step1.Description, new { @class = "control-label col-md-2" })
@@ -85,20 +85,27 @@
                     <h3>@Html.LabelFor(model => model.Step2)</h3>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Step2.Required, new { @class = "control-label col-md-2" })
+                        @Html.Label("Verteile die Zahlen 5, 3 und 1 auf diese Assets", new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.TextBoxFor(model => model.Step2.Required, new { data_bind = "value: Model.Step2.Required" })
-                            @Html.ValidationMessageFor(model => model.Step2.Required)
+                            @Html.Label("Schärfe (Inteligänz, Training, Fokus) ", new { @class = "control-label col-md-2" })
+                            @Html.TextBoxFor(model => model.Step2.Assets.Acuity, new { data_bind = "value: Model.Step2.Assets.Acuity" })
+                            @Html.ValidationMessageFor(model => model.Step2.Assets.Acuity)
                         </div>
-                    </div>
+                        <div class="col-md-10">
+                            @Html.Label("Kraft (Muskel, Personalität, Willenskraft) ", new { @class = "control-label col-md-2" })
+                            @Html.TextBoxFor(model => model.Step2.Assets.Force, new { data_bind = "value: Model.Step2.Assets.Force" })
+                            @Html.ValidationMessageFor(model => model.Step2.Assets.Force)
+                        </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Step2.NotRequired, new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.TextBoxFor(model => model.Step2.NotRequired, new { data_bind = "value: Model.Step2.NotRequired" })
-                            @Html.ValidationMessageFor(model => model.Step2.NotRequired)
+                            @Html.Label("Raffinesse (Agilität, Geschwindigkeit, Elan) ", new { @class = "control-label col-md-2" })
+                            @Html.TextBoxFor(model => model.Step2.Assets.Grace, new { data_bind = "value: Model.Step2.Assets.Grace" })
+                            @Html.ValidationMessageFor(model => model.Step2.Assets.Grace)
                         </div>
-                    </div>
+
+                        </div>
+
+
 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
@@ -110,30 +117,34 @@
 
                 <li style="display: none;" data-bind="visible: Model.StepIndex() == 3">
                     <h3>@Html.LabelFor(model => model.Step3)</h3>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Step3.RequiredDirectUpdate, new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(model => model.Step3.RequiredDirectUpdate, new { data_bind = "value: Model.Step3.RequiredDirectUpdate, event { change: Update.bind($data, $element) }" })
-                            @Html.ValidationMessageFor(model => model.Step3.RequiredDirectUpdate)
-                        </div>
-                    </div>
+                    
                     
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Step3.MyProperty, new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.Step3.Trait1, new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.TextBoxFor(model => model.Step3.MyProperty, new { data_bind = "value: Model.Step3.MyProperty" })
-                            @Html.ValidationMessageFor(model => model.Step3.MyProperty)
+                            @Html.TextBoxFor(model => model.Step3.Trait1, new { data_bind = "value: Model.Step3.Trait1" })
+                            @Html.ValidationMessageFor(model => model.Step3.Trait1)
+                            
+                            
+                        </div>
+                        @Html.DisplayFor(model => model.Step3.SagaSkill1.Name, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.Step3.SagaSkill1, new { data_bind = "value: Model.Step3.SagaSkill1" })
+                            @Html.ValidationMessageFor(model => model.Step3.SagaSkill1)
+
+
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Step3.StringLengthDirectUpdate, new { @class = "control-label col-md-2" })
+                    @*<div class="form-group">
+                        @Html.LabelFor(model => model.Step3.SagaSkills, new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.TextBoxFor(model => model.Step3.StringLengthDirectUpdate, new { data_bind = "value: Model.Step3.StringLengthDirectUpdate, event { change: Update.bind($data, $element) }" })
-                            @Html.ValidationMessageFor(model => model.Step3.StringLengthDirectUpdate)
+                            @Html.TextBoxFor(model => model.Step3.SagaSkills, new { data_bind = "value: Model.Step3.SagaSkills" })
+                            @Html.ValidationMessageFor(model => model.Step3.SagaSkills)
                         </div>
-                    </div>
+                    </div>*@
+
+                    
 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
@@ -142,7 +153,7 @@
                         </div>
                     </div>
                 </li>
-                
+
             </ul>
 
             <div style="clear: both; float: left; width: 100%; margin-top: 20px;">

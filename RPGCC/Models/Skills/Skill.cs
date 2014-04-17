@@ -10,6 +10,8 @@ namespace RPGCC.Models
     [Table("skill")]
     public class Skill
     {
+
+        public bool IsSelected { get; set; }
         [Key]
         public string Name { get; set; }
 

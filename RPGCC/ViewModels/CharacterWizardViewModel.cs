@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using MVC.Wizard.ViewModels;
 using MVC.Wizard.Web.ViewModels;
 using RPGCC.Models;
+using RPGCC.Models.Assets;
+using RPGCC.Models.Skills;
 
 namespace RPGCC.ViewModels
 {
@@ -71,25 +74,63 @@ namespace RPGCC.ViewModels
 
     public class CharacterWizardViewModelStep2 : WizardStep
     {
-
-        [Required]
-        public int? Required { get; set; }
-
-        public string NotRequired { get; set; }
-
+        [Display(Name = "Assets")]
+        public SagaAssets Assets { get; set; }
+        
     }
 
     public class CharacterWizardViewModelStep3 : WizardStep
     {
+        private SagaSkills _sagaSkills;
+
+
+        
+        [Required]
+        [Display(Name = "Merkmale")]
+        public string Trait1 { get; set; }
 
         [Required]
-        public int? RequiredDirectUpdate { get; set; }
+        [Display(Name = "Merkmale")]
+        public string Trait2 { get; set; }
 
         [Required]
-        public string MyProperty { get; set; }
+        [Display(Name = "Merkmale")]
+        public string Trait3 { get; set; }
 
-        [StringLength(3)]
-        public string StringLengthDirectUpdate { get; set; }
+        [Required]
+        [Display(Name = "Merkmale")]
+        public string Trait4 { get; set; }
+
+        [Required]
+        [Display(Name = "Merkmale")]
+        public string Trait5 { get; set; }
+
+        [Required]
+        [Display(Name = "Fähigkeiten")]
+        public Skill SagaSkill1 { get { return GetSkill(1); } set
+        {
+            if (value == null) throw new ArgumentNullException("value");
+            this.SagaSkill1 = value;
+        }
+        }
+
+
+
+        public CharacterWizardViewModelStep3()
+        {
+            _sagaSkills = new SagaSkills();
+        }
+
+
+        private Skill GetSkill(int i)
+        {
+            return _sagaSkills.Skills[i];
+        }
+
+        public int GetSkillCount()
+        {
+            return _sagaSkills.Skills.Count;
+        }
 
     }
 

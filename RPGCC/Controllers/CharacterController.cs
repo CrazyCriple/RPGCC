@@ -65,72 +65,13 @@ namespace RPGCC.Controllers
             }
             return View();
         }
-
-
-<<<<<<< HEAD
-        [HttpPost]
-        public ActionResult Finishing(string prevBtn, string nextBtn)
-=======
-        public ActionResult Wizard()
-        {
-            var character = new Character("noname");
-
-            //Choose name / age and gender
-
-            //Choose concept
-
-            //Choose Assets
-
-            //Choose Skills
-
-            //Choose Traits
-
-
-        }
-
-        /// <summary>
-        /// Only for testing
-        /// </summary>
-        private Character CreateTestChar()
->>>>>>> ae145c4c2e9bb6edcedd91e1c4b64ce1a43420b2
-        {
-            Character obj = GetCharacter();
-            if (prevBtn != null)
-            {
-                BasicStats bs = new BasicStats();
-                bs.Assets= obj.Assets;
-                bs.SagaSkills = obj.SagaSkills;
-                bs.Traits = obj.Traits;
-                return View("BasicStats", bs);
-            }
-            if (nextBtn != null)
-            {
-                if (ModelState.IsValid)
-                {
-                    //todo: save to DB
-                    //db.Customers.Add(obj);
-                    //db.SaveChanges();
-                    
-                    RemoveCharacter();
-                    return View("Success");
-                }
-            }
-            return View();
-        }
-
-
-		public ActionResult Edit()
-		{
-			var char1 = CreateTestChar();
-			return View(char1);
-
-		}
+        
 		/// <summary>
 		/// Only for testing
 		/// </summary>
 		private Character CreateTestChar()
 		{
-			var char1 = new Character("Ragnar Lovbrok");
+			var char1 = new Character();
 
 			char1.Age = 28;
 			char1.Concept = "Impaler";
@@ -151,7 +92,7 @@ namespace RPGCC.Controllers
 		{
 			if (Session["character"] == null)
 			{
-				Session["character"] = new Character("noname");
+				Session["character"] = new Character();
 			}
 			return (Character) Session["character"];
 
